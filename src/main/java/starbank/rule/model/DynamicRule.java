@@ -32,5 +32,7 @@ public class DynamicRule {
     @Column(name = "rule_json", columnDefinition = "TEXT")
     private List<QueryDefinition> rule;
 
+    @OneToOne(mappedBy = "rule", cascade = CascadeType.ALL, orphanRemoval = true)
+    private RuleStatistic statistic;
     }
 }

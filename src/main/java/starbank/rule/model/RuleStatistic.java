@@ -11,14 +11,14 @@ import lombok.NoArgsConstructor;
 public class RuleStatistic {
 
     @Id
-    private Long ruleId; // ID правила, с которым связана статистика
+    private Long ruleId;
 
     @OneToOne(fetch = FetchType.LAZY)
-    @MapsId // Указывает, что это поле является и ID, и связью
+    @MapsId
     @JoinColumn(name = "rule_id")
     private DynamicRule rule;
 
-    private long count = 0; // Счетчик срабатываний
+    private long count = 0;
 
     public RuleStatistic(DynamicRule rule) {
         this.rule = rule;

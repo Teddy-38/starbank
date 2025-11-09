@@ -9,6 +9,7 @@ import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 import starbank.user.User;
+import starbank.user.User;
 import starbank.user.UserService;
 import starbank.recommendation.RecommendationService;
 
