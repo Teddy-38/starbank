@@ -38,4 +38,29 @@
         <artifactId>lombok</artifactId>
         <optional>true</optional>
     </dependency>
+    <dependency>
+        <groupId>org.telegram</groupId>
+        <artifactId>telegrambots-spring-boot-starter</artifactId>
+        <version>6.9.7.1</version>
+    </dependency>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>build-info</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+    <dependency>
+        <groupId>org.springdoc</groupId>
+        <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+        <version>2.5.0</version>
+    </dependency>
 </dependencies>

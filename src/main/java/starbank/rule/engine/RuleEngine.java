@@ -21,7 +21,6 @@ public class RuleEngine {
         for (QueryDefinition queryDef : rule.getRule()) {
             boolean result = executeSingleQuery(queryDef, userId);
             if (!result) {
-                // Если хоть один запрос не выполнился, все правило не выполняется
                 return false;
             }
         }

@@ -1,15 +1,15 @@
 package starbank.rule.repository;
 
+import jdk.jfr.Enabled;
 import lombok.RequiredArgsConstructor;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
-@starbank.rule.repository.RequiredArgsConstructor
-{
+@starbank.rule.repository.RequiredArgsConstructor {
     private final JdbcTemplate jdbcTemplate;
 
-    @Cacheable("userTransactionCount")
+    @Enabled
     public int countUserTransactionsByProductType(int userId, String productType) {
         String sql = "SELECT count(*) FROM transactions t JOIN products p ON t.product_id = p.id WHERE t.user_id = ? AND p.type = ?";
         Integer count = jdbcTemplate.queryForObject(sql, Integer.class, userId, productType);

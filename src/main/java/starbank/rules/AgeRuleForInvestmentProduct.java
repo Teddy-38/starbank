@@ -13,10 +13,7 @@ public class AgeRuleForInvestmentProduct implements RecommendationRule {
 
     @Override
     public boolean evaluate(User user, List<Transaction> userTransactions) {
-        // Просто вызываем метод getAge() без аргументов
         int age = user.getAge();
-
-        // Рекомендуем, если пользователю 18 лет или больше
         return age >= 18;
     }
 

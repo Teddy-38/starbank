@@ -9,6 +9,11 @@ import java.util.List;
 import java.util.UUID;
 
 @Entity
+public class DynamicRule {
+
+    @OneToOne(mappedBy = "rule", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+    private RuleExecutionStats stats;
+
 @Table(name = "dynamic_rules")
 @Data
 public class DynamicRule {
@@ -27,5 +32,7 @@ public class DynamicRule {
     @Column(name = "rule_json", columnDefinition = "TEXT")
     private List<QueryDefinition> rule;
 
+    @OneToOne(mappedBy = "rule", cascade = CascadeType.ALL, orphanRemoval = true)
+    private RuleStatistic statistic;
     }
 }
