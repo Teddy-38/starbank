@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  app:
+    build: .
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    environment:
+      - TELEGRAM_BOT_TOKEN=8381200814:AAEjyPJsPo4KRXUcNmJ9QLjUVQVb6x9_QTU
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/recommendations
+      - SPRING_DATASOURCE_USERNAME=Teddy3894
+      - SPRING_DATASOURCE_PASSWORD=Zhdanov_2024
+      - SPRING_PROFILES_ACTIVE=prod
